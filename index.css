@@ -8,7 +8,9 @@
 body{
     color: #ededed;
     background: #081b29;
+    
 }
+/* navbar section*/
 
 .header{
     position: fixed;
@@ -55,6 +57,24 @@ body{
 .navbar a:hover{
     color: #0ef;
 }
+/* Hide the menu initially for small screens */
+.navbar.active {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #051129;
+    width: 100%;
+    text-align: center;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+/* home section*/
 .home{
     position: relative;
     width: 100%;
@@ -67,6 +87,7 @@ body{
     align-items: center;
     padding: 70px 10% 0;
 }
+
 .home-content{
     max-width: 600px;
 }
@@ -110,7 +131,18 @@ body{
     color: #081b29;
     box-shadow: 0 0 20px #0ef;
 }
-      
+.hero-img {
+    flex: 1;
+    max-width: 45%;
+    text-align: center;
+  }
+  
+  .hero-img img {
+    width: 50%;
+    max-height: 350px;
+    border-radius: 10px;
+    object-fit: cover;
+  }
 
 .btn-box{
     display: inline-block;
@@ -163,6 +195,8 @@ body{
     line-height: 1.4;
     margin-bottom: 4rem;
 }
+
+
 /* skill section*/
 .sub-title {
     text-align: center;
@@ -642,17 +676,6 @@ section{
     border-radius: 0.5rem;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 @keyframes slideRight {
     0%{
         transform: translateX(-100px);
@@ -673,3 +696,75 @@ section{
         opacity: 1;
     }
 }
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+        font-size: 28px;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: #fff;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.8);
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar.active {
+        display: flex;
+        
+    }
+
+    .navbar a {
+        padding: 15px 0;
+        color: #fff;
+        font-size: 18px;
+    }
+}
+
+.home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url(images/image.png) no-repeat center center / cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 70px 10% 0;
+}
+
+.home-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #fff;
+}
+
+
+.btn-box {
+    font-size: 14px;
+        padding: 10px 20px;
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0ef;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #081b29;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+
+.btn-box:hover {
+    box-shadow: 0 0 10px #0ef;
+}
+
