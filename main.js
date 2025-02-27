@@ -68,3 +68,38 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 3000);
     });
 });
+/* resume download*/
+
+document.getElementById("resumeLink").addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent default action
+
+    // Open resume in new tab
+    window.open("images/PalakKasaudhan-FrontendDeveloper(React)-iEDm.pdf", "_blank");
+
+    // Force download
+    let a = document.createElement("a");
+    a.href = "images/PalakKasaudhan-FrontendDeveloper(React)-iEDm.pdf";
+    a.download = "PalakKasaudhan-FrontendDeveloper(React)-iEDm.pdf"; // Set download file name
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+});
+
+/* toggle and hide navbar*/
+document.addEventListener("DOMContentLoaded", function () {
+    const menuBtn = document.getElementById("menu-btn");
+    const navbar = document.getElementById("navbar");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    // Toggle menu visibility
+    menuBtn.addEventListener("click", function () {
+        navbar.classList.toggle("open");
+    });
+
+    // Close menu when clicking on a link
+    navLinks.forEach(link => {
+        link.addEventListener("click", function () {
+            navbar.classList.remove("open");
+        });
+    });
+});

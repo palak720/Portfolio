@@ -71,8 +71,7 @@
 
 /* General Styles */
 * {
-    margin: 0;
-    padding: 0;
+   
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
@@ -80,6 +79,8 @@
 body {
     background-color: #081b29 ;
     color: #333;
+    margin: 0;
+    padding: 0;
 }
 
 .header {
@@ -107,11 +108,17 @@ body {
     color: white;
     display: none;
     cursor: pointer;
+    background: none;
+    border: none;
 }
 
 .navbar {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     gap: 20px;
+    
 }
 
 .navbar a {
@@ -138,19 +145,22 @@ body {
         flex-direction: column;
         position: absolute;
         top: 60px;
-        right: 10%;
+        right: 0;
         background: #222;
         width: 200px;
         border-radius: 5px;
+        text-align: left;
+        padding: 10px 0;
+    }
+    .navbar.open{
+        display: flex;
     }
 
     .navbar a {
-        padding: 15px;
+        display: block;
+        padding: 10px;
         text-align: center;
-    }
-
-    .navbar.active {
-        display: flex;
+        text-decoration: none;
     }
 }
 
