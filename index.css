@@ -5,6 +5,7 @@
    
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+
 }
 
 body {
@@ -532,11 +533,12 @@ svg {
 /* General Styles project section */
 #portfolio {
     width: 100%;
-    height: 500px;
+    /*height: 500px;*/
     padding: 80px 0;
     text-align: center;
     background: #081b29;
-    padding-top: 30px;
+    /*padding-top: 30px;*/
+    padding: 30px 0 80px;
 }
 
 .main-text h2 {
@@ -557,14 +559,18 @@ svg {
     flex-wrap: wrap;
     gap: 30px;
     padding: 30px;
+    align-items: center;
 }
 
 /* Project Card */
 .row {
     position: relative;
-    width: 1050px; /* Increased width */
+     width: 100%;
+    max-width: 700px; /* adjust as needed */
+      aspect-ratio: 16 / 9; /* add this line for consistency */
     height: 300px; /* Increased height */
     border-radius: 15px;
+    margin: 0 auto;
     overflow: hidden;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -599,6 +605,7 @@ svg {
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
     padding: 20px;
+
 }
 
 .row:hover .layer {
@@ -650,7 +657,7 @@ svg {
     }
 }
 
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
     .main-text h2 {
         font-size: 2.5rem;
     }
@@ -659,13 +666,174 @@ svg {
         width: 95%;
         height: auto;
     }
+      .layer {
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.85);
+        padding: 15px;
+    }
     .layer h5{
         font-size: 1.2rem;
     }
     .layer p{
         font-size: 0.9rem;
     }
+    .btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}*/
+@media (max-width: 480px) {
+  .row {
+    width: 90%;
+    height: auto;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .layer {
+    padding: 10px;
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+     height: 100%;  /* ✅ ensure it stretches fully */
+    overflow-y: auto;  /* ✅ allow scroll if content overflows */
+    height: 100%;
+    
+  }
+
+  .layer h5 {
+    font-size: 1rem;
+     margin-bottom: 8px;
+  }
+
+  .layer p {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+  }
+
+  .btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    margin: 4px 0;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+      max-width: 200px;
+  }
 }
+/* Expercience section*/
+
+#experience {
+  background: #081b29;
+  padding: 60px 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.experience-heading {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+.experience-card {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: #0f2a3b;
+  border-radius: 15px;
+  padding: 30px 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+.experience-card:hover {
+  transform: scale(1.03);
+}
+
+.experience-icon {
+  font-size: 2.5rem;
+  color: #0ef;
+  margin-bottom: 20px;
+}
+
+.experience-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.experience-content p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.experience-content ul {
+  text-align: left;
+  margin: 15px 0;
+  padding-left: 20px;
+}
+
+.experience-content ul li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #ddd;
+}
+
+.experience-content a {
+  color: #0ef;
+  text-decoration: underline;
+}
+
+.skills {
+  margin-top: 15px;
+}
+
+.skills span {
+  display: inline-block;
+  background: #0ef;
+  color: #000;
+  padding: 6px 12px;
+  margin: 5px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.download-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #0ef;
+  /*color:#000;*/
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.download-btn i{
+    color: #000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .experience-heading {
+    font-size: 2rem;
+  }
+
+  .experience-card {
+    padding: 20px;
+  }
+
+  .experience-content h3 {
+    font-size: 1.5rem;
+  }
+}
+
+
+
 
 /*contact-form*/
 .contact {
