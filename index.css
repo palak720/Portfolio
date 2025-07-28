@@ -13,7 +13,10 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
+    font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
 }
+
 
 .header {
     display: flex;
@@ -64,6 +67,117 @@ body {
 .navbar a:hover, .navbar a.active {
     background: #0ef;
     border-radius: 5px;
+}
+/* 🌞 Light Mode Overrides */
+body.light-theme {
+  background-color: #f8f8f8;
+  color: #111;
+}
+
+body.light-theme .header {
+  background: #ffffff;
+}
+
+body.light-theme .logo,
+body.light-theme .navbar a {
+  color: #111;
+}
+
+body.light-theme .navbar a:hover,
+body.light-theme .navbar a.active {
+  background: #0ef;
+  color: #000;
+}
+
+body.light-theme .home,
+body.light-theme .about,
+body.light-theme #portfolio,
+body.light-theme #experience,
+body.light-theme .contact,
+body.light-theme .last-text {
+  background: #ffffff;
+  color: #111;
+}
+
+body.light-theme .about-text h2,
+body.light-theme .main-text h2,
+body.light-theme .experience-heading,
+body.light-theme .contact-text h2 {
+  color: #111;
+}
+
+body.light-theme .layer {
+  background: rgba(255, 255, 255, 0.9);
+  color: #111;
+}
+
+body.light-theme .btn,
+body.light-theme .btn-box,
+body.light-theme .download-btn {
+  background: #0ef;
+  color: #000;
+}
+
+body.light-theme .contact-list li,
+body.light-theme .contact-text p,
+body.light-theme .percentage,
+body.light-theme .text {
+  color: #000;
+}
+/* Fix text color in light theme */
+body.light-theme,
+body.light-theme p,
+body.light-theme h1,
+body.light-theme h2,
+body.light-theme h3,
+body.light-theme h4,
+body.light-theme .info,
+body.light-theme .text,
+body.light-theme .contact-list li,
+body.light-theme .navbar a {
+    color: #111 !important;
+}
+
+body.light-theme .about-text p,
+body.light-theme .home-content p,
+body.light-theme .experience-content ul li,
+body.light-theme .experience-content p {
+    color: #333 !important;
+}
+/* Light theme override for Internship Experience section */
+body.light-theme #experience {
+  background-color: #f8f8f8;
+}
+
+body.light-theme #experience,
+body.light-theme .experience-heading,
+body.light-theme .experience-content h3,
+body.light-theme .experience-content p,
+body.light-theme .experience-content ul li {
+  color: #111 !important;
+}
+
+body.light-theme .experience-card {
+  background-color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+/* Light theme fixes for mobile navbar */
+body.light-theme .navbar {
+  background: #ffffff;
+}
+
+body.light-theme .navbar a {
+  color: #111 !important;
+}
+
+body.light-theme .navbar a:hover,
+body.light-theme .navbar a.active {
+  background: #0ef;
+  color: #000 !important;
+}
+/* Toggle menu icon color */
+body.light-theme .menu-btn {
+  color: #111;
 }
 
 /* Responsive Design */
@@ -207,7 +321,7 @@ body {
     .home {
         flex-direction: column;  /* ✅ Fix stacking issue */
         text-align: center;
-        padding: 40px 5%;
+        padding: 120px 5% 40px; 
     }
     .home-content h1 {
         font-size: 2.5rem;
@@ -253,12 +367,7 @@ body {
         padding: 7px 14px;
     }
 }
-
-
-
-
-
-
+/* about section*/
 
 .about {
     display: flex;
@@ -847,7 +956,7 @@ svg {
 }
 
 .contact-text {
-    max-width: 500px;
+    max-width: 450px;
     flex: 1;
 }
 
@@ -895,6 +1004,11 @@ svg {
 .contact-icon a:hover {
     color: #0ef;
 }
+.contact-form {
+  flex: 1.2; /* ✅ slightly wider than .contact-text */
+  max-width: 600px;
+}
+
 
 .contact-form form {
     display: flex;
