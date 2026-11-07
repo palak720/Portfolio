@@ -1,3 +1,31 @@
-   @tailwind base;
-   @tailwind components;
-   @tailwind utilities;
+   @import '@fontsource-variable/bricolage-grotesque/wdth.css';
+@import '@fontsource/instrument-serif/400.css';
+@import '@fontsource/instrument-serif/400-italic.css';
+@import '@fontsource-variable/dm-sans';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --photo-w: clamp(230px, 24vw, 430px);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 4rem;
+  }
+  body {
+    @apply bg-sand-300 font-sans text-ink antialiased;
+  }
+  ::selection {
+    background: #5c4030;
+    color: #f7f3ea;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
