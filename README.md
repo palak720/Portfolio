@@ -1,100 +1,75 @@
-# 🚀 Palak Kasaudhan — Portfolio
+# React + TypeScript + Vite
 
-A bold, animated personal portfolio website for a **Full Stack Developer**, built with pure HTML, CSS & vanilla JavaScript. No frameworks, no build tools — just open and go.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
----
+Currently, two official plugins are available:
 
-## ✨ Features & Animations
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-| Feature | Description |
-|---|---|
-| 🔮 Glitch Text | Name animates with a RGB glitch effect on loop |
-| 🖱️ Custom Cursor | Magnetic cursor with a trailing ring that reacts to hover |
-| 🃏 3D Card Tilt | Project & hero cards tilt in 3D on mouse movement |
-| 🌊 Parallax Orbs | Background orbs drift with mouse movement |
-| 📜 Scroll Reveal | Sections fade/slide in as you scroll down |
-| ⚡ Skill Bars | Progress bars animate to fill when scrolled into view |
-| 🔢 Count-Up Stats | Numbers count up from 0 when the About section loads |
-| ✍️ Typing Effect | Hero role cycles through phrases with a blinking cursor |
-| 🔦 Nav Underline | Active nav link underlines on scroll |
+## React Compiler
 
----
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## 📁 Project Structure
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
+
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 
 ```
-portfolio/
-│
-├── palak_portfolio_v2.html   ← Main file (entire portfolio)
-└── README.md                 ← You are here
+
+You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+
 ```
-
-> Everything lives in one self-contained `.html` file —
-> styles, scripts, and markup all together for easy deployment.
-
----
-
-## 🛠️ Tech Stack
-
-- **HTML5** — Semantic structure
-- **CSS3** — Custom properties, animations, Grid, Flexbox
-- **Vanilla JavaScript** — All interactivity (no libraries)
-- **Google Fonts** — Syne · Space Mono · DM Sans
-
----
-
-## 📦 Sections
-
-1. **Hero** — Glitch name, typing role, parallax background, info card
-2. **About** — Bio text + animated stat counters
-3. **Skills** — Animated skill bars + tech chip grid
-4. **Projects** — 4 cards (2 live + 2 placeholders) with 3D tilt
-5. **Experience** — Timeline card for Qurocity.ai internship
-6. **Contact** — Email, LinkedIn, GitHub cards
-7. **Footer** — Minimal branded footer
-
----
-
-## 🚀 How to Run
-
-### Option 1 — Open Locally
-```bash
-# Just double-click the file, or:
-open palak_portfolio_v2.html
-```
-
-### Option 2 — Deploy on Netlify (Recommended)
-1. Go to [app.netlify.com/drop](https://app.netlify.com/drop)
-2. Drag & drop `palak_portfolio_v2.html`
-3. Your portfolio is live in seconds ✅
-
-### Option 3 — Deploy on GitHub Pages
-```bash
-git init
-git add .
-git commit -m "Initial portfolio"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/portfolio.git
-git push -u origin main
-# Then enable GitHub Pages in repo Settings → Pages
-```
-
----
-
-## 📬 Contact
-
-| Platform | Link |
-|---|---|
-| Email | palakkasaudhan123@gmail.com |
-| LinkedIn | [palak-kasaudhan](https://www.linkedin.com/in/palak-kasaudhan-098399208/) |
-| GitHub | [palak720](https://github.com/palak720) |
-
----
-
-## 📄 License
-
-This project is open for personal use. Feel free to use it as inspiration or a base for your own portfolio — a credit or shoutout is always appreciated! 🙌
-
----
-
-> Made with ♥ by **Palak Kasaudhan** · Full Stack Developer
