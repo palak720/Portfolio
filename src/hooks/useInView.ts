@@ -22,3 +22,4 @@ export function useInView<T extends HTMLElement>(threshold = 0.12) {
 
   return { ref, seen }
 }
+
