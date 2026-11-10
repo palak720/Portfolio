@@ -1,75 +1,46 @@
-# React + TypeScript + Vite
+# Palak Kasaudhan — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React 18 + TypeScript + Tailwind CSS (Vite).
 
-Currently, two official plugins are available:
+## Run
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm install
+npm run dev        # http://localhost:5173
+npm run build      # type-checks, then builds to /dist
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## 1. Add your photo (important)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Put it in `public/images/` as **`palak.png`** (or `.jpg` / `.jpeg` / `.webp`).
+A transparent cut-out PNG looks best (the hero photo sits between your first and last name).
+Until then a placeholder silhouette is shown.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 2. Add project screenshots (optional)
 
-```
+Projects with a live link try an auto-screenshot first. For better control (and for projects
+without a live link) save images as `public/images/projects/<id>.png`, where `<id>` is one of:
+`groweasy`, `medconnect`, `cybershield`, `auditpilot`, `k72`, `biographx`, `recipes`.
+
+## 3. Edit content
+
+Everything is in two files — no need to touch components:
+
+- `src/data/site.ts` — name, email, links, hero/about text, tech marquee
+- `src/data/projects.ts` — projects (add/remove/reorder; `featured: true` = full-width card)
+
+## How the hero avoids overlap
+
+`src/hooks/useFitFont.ts` measures the longest name and picks ONE font-size so both names fit
+inside their own column; the photo has its own reserved middle column. Change the name and it
+re-fits automatically.
+
+## Contact form
+
+Uses [FormSubmit](https://formsubmit.co). The first message you ever receive triggers a one-time
+activation email to `site.email` — click the link in it once, after that messages arrive normally.
+
+## Deploy (Vercel)
+
+Push this folder to GitHub → import in Vercel. Framework preset: **Vite**
+(build `npm run build`, output `dist`). Netlify works the same way.
