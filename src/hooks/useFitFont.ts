@@ -1,8 +1,8 @@
 import { useCallback, useLayoutEffect, useRef, useState, type RefObject } from 'react'
 
 export interface FitPair {
-  text: RefObject<HTMLElement>
-  box: RefObject<HTMLElement>
+  text: RefObject<HTMLElement | null>
+  box: RefObject<HTMLElement | null>
 }
 
 /**
