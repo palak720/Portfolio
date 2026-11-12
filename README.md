@@ -33,7 +33,7 @@ Everything is in two files — no need to touch components:
 
 `src/hooks/useFitFont.ts` measures the longest name and picks ONE font-size so both names fit
 inside their own column; the photo has its own reserved middle column. Change the name and it
-re-fits automatically.
+re-fits autometically.
 
 ## Contact form
 
