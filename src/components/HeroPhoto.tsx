@@ -9,7 +9,7 @@ function Placeholder() {
         <path d="M10 300c0-72 40-118 90-118s90 46 90 118Z" fill="#efe6d8" />
       </svg>
       <p className="absolute inset-x-0 bottom-4 px-4 text-center text-[11px] font-semibold uppercase tracking-widest text-black/40">
-        Add your photo → public/images/palak.png
+        Add your photo → public/Palak.png
       </p>
     </div>
   )
