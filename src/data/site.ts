@@ -1,4 +1,4 @@
-const base = import.meta.env.BASE_URL
+const base = import.meta.env.BASE_URL.replace(/\/$/, '')
 
 export const site = {
   name: 'Palak Kasaudhan',
@@ -11,8 +11,8 @@ export const site = {
   github: 'https://github.com/palak720',
   linkedin: 'https://www.linkedin.com/in/palak-kasaudhan-098399208/',
   resume: 'https://drive.google.com/file/d/1fGl6ea-18D0Q0FJBMXfd-i3f8F3vT666/view?usp=sharing',
-  // Drop your photo into /public/images/ with ANY of these names (transparent PNG looks best).
-  photoCandidates: ['palak.png', 'palak.jpg', 'palak.jpeg', 'palak.webp'].map((f) => `${base}images/${f}`),
+  // Any image in public/ or public/images/ is picked up automatically (see vite.config.ts).
+  photoCandidates: __PHOTOS__.map((u) => `${base}${u}`),
 
   hero: {
     kicker: "Hey, I'm Palak.",
