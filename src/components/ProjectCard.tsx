@@ -19,7 +19,7 @@ const themes: Record<Variant, Theme> = {
   tan: { card: 'bg-[#efe3d4] text-[#4a3828]', muted: 'text-[#4a3828]/70', rule: 'border-[#4a3828]/15', chip: 'bg-[#4a3828]/10 text-[#4a3828]', btn: 'bg-[#6b4a30] text-white hover:bg-[#7b5a40]', link: 'text-[#4a3828]', bar: 'bg-[#e0cfba]' },
   sage: { card: 'bg-[#e1e8d6] text-[#2f3d2a]', muted: 'text-[#2f3d2a]/70', rule: 'border-[#2f3d2a]/15', chip: 'bg-[#2f3d2a]/10 text-[#2f3d2a]', btn: 'bg-[#3f5a35] text-white hover:bg-[#4d6a42]', link: 'text-[#2f3d2a]', bar: 'bg-[#cfdabf]' },
   sky: { card: 'bg-[#dde7f0] text-[#26384a]', muted: 'text-[#26384a]/70', rule: 'border-[#26384a]/15', chip: 'bg-[#26384a]/10 text-[#26384a]', btn: 'bg-[#2f5173] text-white hover:bg-[#3c6188]', link: 'text-[#26384a]', bar: 'bg-[#c6d6e6]' },
-  cream: { card: 'bg-[#f0e9dc] text-[#43362a]', muted: 'text-[#43362a]/70', rule: 'border-[#43362a]/15', chip: 'bg-[#43362a]/10 text-[#43362a]', btn: 'bg-cocoa text-white hover:bg-cocoa-light', link: 'text-[#43362a]', bar: 'bg-[#e4d9c5]' },
+  cream: { card: 'bg-[#f0e9dc] text-[#43362a]', muted: 'text-[#43362a]/70', rule: 'border-[#43362a]/15', chip: 'bg-[#43362a]/10 text-[#43362a]', btn: 'bg-[#5c4030] text-white hover:bg-[#7b5a45]', link: 'rounded-xl border border-[#43362a]/30 bg-[#43362a]/5 px-5 py-3 text-[#43362a] transition hover:border-[#5c4030] hover:bg-[#5c4030] hover:text-white', bar: 'bg-[#e4d9c5]' },
 }
 
 const shot = (url: string) => `https://s0.wp.com/mshots/v1/${encodeURIComponent(url)}?w=1400&h=900`
@@ -64,7 +64,7 @@ function Mock({ p, theme, onOpen }: { p: Project; theme: Theme; onOpen: (src: st
             <button
               type="button"
               onClick={() => onOpen(src, p.name)}
-              className="absolute bottom-3 right-3 inline-flex items-center gap-2 rounded-xl bg-cocoa/90 px-4 py-2 text-sm font-medium text-white backdrop-blur transition hover:bg-cocoa"
+              className="absolute bottom-3 right-3 inline-flex items-center gap-2 rounded-xl bg-[#5c4030]/90 px-4 py-2 text-sm font-medium text-white backdrop-blur transition hover:bg-[#5c4030]"
             >
               <Expand /> View screenshot
             </button>

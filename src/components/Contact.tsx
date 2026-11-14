@@ -6,7 +6,7 @@ import Reveal from './Reveal'
 type Status = 'idle' | 'sending' | 'sent' | 'error'
 
 const field =
-  'w-full rounded-xl border border-black/10 bg-[#fdfbf6] px-4 py-3.5 text-[0.95rem] outline-none transition placeholder:text-ink/40 focus:border-cocoa focus:ring-2 focus:ring-cocoa/15'
+  'w-full rounded-xl border border-black/10 bg-[#fdfbf6] px-4 py-3.5 text-[0.95rem] outline-none transition placeholder:text-ink/40 focus:border-[#5c4030] focus:ring-2 focus:ring-[#5c4030]/15'
 
 export default function Contact() {
   const [status, setStatus] = useState<Status>('idle')
@@ -120,7 +120,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={status === 'sending'}
-                  className="inline-flex items-center gap-3 rounded-xl bg-cocoa px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-cocoa-light disabled:opacity-60"
+                  className="inline-flex items-center gap-3 rounded-xl bg-[#5c4030] px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-[#7b5a45] disabled:opacity-60"
                 >
                   {status === 'sending' ? 'Sending…' : 'Send message'} <Send />
                 </button>
