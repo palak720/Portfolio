@@ -46,7 +46,7 @@ export default function Work() {
         <Reveal className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.16em] text-ink/70">
-              <span className="h-1.5 w-1.5 rounded-full bg-cocoa" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[#5c4030]" />
               Selected works / Development &amp; experiments
             </p>
             <h2 className="mt-5 font-serif text-[clamp(2.4rem,5.4vw,4.6rem)] leading-[1] tracking-tight">
@@ -54,15 +54,15 @@ export default function Work() {
             </h2>
           </div>
 
-          <div role="tablist" className="flex shrink-0 gap-1 self-start rounded-2xl border border-black/10 bg-[#e9e0d3] p-1.5">
+          <div role="tablist" className="flex shrink-0 gap-1 self-start rounded-2xl border border-[#5c4030]/25 bg-[#e9e0d3] p-1.5">
             {tabs.map((t) => (
               <button
                 key={t.id}
                 role="tab"
                 aria-selected={filter === t.id}
                 onClick={() => setFilter(t.id)}
-                className={`rounded-xl px-4 py-2.5 text-sm font-medium transition ${
-                  filter === t.id ? 'bg-cocoa text-white shadow' : 'text-ink/70 hover:text-ink'
+                className={`rounded-xl px-4 py-2.5 text-sm font-semibold transition ${
+                  filter === t.id ? 'bg-[#5c4030] text-white shadow' : 'text-[#3a2f28] hover:bg-[#5c4030]/10 hover:text-[#5c4030]'
                 }`}
               >
                 {t.label}
