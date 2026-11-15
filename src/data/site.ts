@@ -10,7 +10,7 @@ export const site = {
   githubUser: 'palak720',
   github: 'https://github.com/palak720',
   linkedin: 'https://www.linkedin.com/in/palak-kasaudhan-098399208/',
-  resume: 'https://drive.google.com/file/d/1fGl6ea-18D0Q0FJBMXfd-i3f8F3vT666/view?usp=sharing',
+  resume: 'https://drive.google.com/file/d/1UVyPycei2Ck2gUfCtjoMVr7CDV3z-LpI/view?usp=sharing',
   // Any image in public/ or public/images/ is picked up automatically (see vite.config.ts).
   photoCandidates: __PHOTOS__.map((u) => `${base}${u}`),
 
