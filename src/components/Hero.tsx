@@ -63,7 +63,7 @@ export default function Hero() {
 
         {/* photo — same width token as the middle column */}
         <div className="absolute inset-y-0 left-1/2 z-10 w-[var(--photo-w)] -translate-x-1/2 pt-4">
-          <HeroPhoto className="h-full w-full rounded-t-[1.75rem] shadow-[0_30px_80px_-20px_rgba(42,31,23,.45)]" />
+          <HeroPhoto className="photo-rise h-full w-full rounded-t-[1.75rem] shadow-[0_30px_80px_-20px_rgba(42,31,23,.45)]" />
         </div>
 
         {/* bottom copy — lives in the side columns, never under the photo */}
@@ -121,7 +121,7 @@ export default function Hero() {
           {site.roleTop} {site.roleBottom}
         </p>
 
-        <HeroPhoto className="mx-auto mt-8 aspect-[4/5] w-[72%] max-w-xs rounded-3xl shadow-[0_24px_60px_-20px_rgba(42,31,23,.45)]" />
+        <HeroPhoto className="photo-rise [--rise:48px] mx-auto mt-8 aspect-[4/5] w-[72%] max-w-xs rounded-3xl shadow-[0_24px_60px_-20px_rgba(42,31,23,.45)]" />
 
         <p className="mt-9 flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em]">
           <span className="h-1.5 w-1.5 rounded-full bg-ink" />

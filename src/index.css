@@ -1,4 +1,4 @@
-   @import '@fontsource-variable/bricolage-grotesque/wdth.css';
+@import '@fontsource-variable/bricolage-grotesque/wdth.css';
 @import '@fontsource/instrument-serif/400.css';
 @import '@fontsource/instrument-serif/400-italic.css';
 @import '@fontsource-variable/dm-sans';
@@ -17,7 +17,7 @@
     scroll-padding-top: 4rem;
   }
   body {
-    @apply bg-stone-200 text-gray-900 antialiased;
+    @apply bg-sand-300 font-sans text-ink antialiased;
   }
   ::selection {
     background: #5c4030;
@@ -28,4 +28,17 @@
       scroll-behavior: auto;
     }
   }
+}
+
+/* Hero photo: rises from the bottom edge, then settles */
+@keyframes photo-rise {
+  0%   { opacity: 0; transform: translateY(var(--rise, 100%)); }
+  35%  { opacity: 1; }
+  100% { opacity: 1; transform: none; }
+}
+.photo-rise {
+  animation: photo-rise 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .photo-rise { animation: none; }
 }
